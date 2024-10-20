@@ -10,12 +10,12 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				default:
-					"border shadow-[inset_1px_0_0.4px_0_var(--color-gray-800),inset_0_1px_0.4px_0_var(--color-gray-700),inset_-1px_0_0.4px_0_var(--color-gray-800),inset_0_-1px_0.4px_0_var(--color-gray-900)] border-gray-950 bg-gray-950 web:hover:opacity-90 active:opacity-90",
+					"border shadow-[inset_1px_0_1px_0_var(--color-gray-800),inset_0_1px_1px_0_var(--color-gray-700),inset_-1px_0_1px_0_var(--color-gray-800),inset_0_-1px_1px_0_var(--color-gray-900)] border-gray-950 bg-gray-950 web:hover:opacity-90 active:opacity-90",
 				brand:
-					"border shadow-[inset_1px_0_0.4px_0_var(--color-primary-600),inset_0_1px_0.4px_0_var(--color-primary-500),inset_-1px_0_0.4px_0_var(--color-primary-600),inset_0_-1px_0.4px_0_var(--color-primary-700)] border-primary-700 bg-primary web:hover:opacity-90 active:opacity-90",
+					"border shadow-[inset_1px_0_1px_0_var(--color-primary-600),inset_0_1px_1px_0_var(--color-primary-500),inset_-1px_0_1px_0_var(--color-primary-600),inset_0_-1px_1px_0_var(--color-primary-700)] border-primary-700 bg-primary web:hover:opacity-90 active:opacity-90",
 				destructive: "bg-destructive web:hover:opacity-90 active:opacity-90",
 				outline:
-					"border border-border bg-background shadow-[inset_0_-1px_0.4px_0_var(--color-shadow-dark),0_1px_3px_0_var(--color-shadow)] web:hover:bg-gray-50 web:hover:text-accent-foreground active:bg-accent",
+					"border border-border bg-background shadow-[inset_0_-1px_1px_0_var(--color-shadow-dark),0_1px_3px_0_var(--color-shadow)] web:hover:bg-gray-50 web:hover:text-accent-foreground active:bg-accent",
 				secondary: "bg-secondary web:hover:opacity-80 active:opacity-80",
 				ghost:
 					"web:hover:bg-accent web:hover:text-accent-foreground active:bg-accent",
