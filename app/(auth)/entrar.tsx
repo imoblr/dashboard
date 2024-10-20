@@ -10,8 +10,6 @@ import {
 	FormInput,
 	HStack,
 	LabelSpacer,
-	Blob,
-	// ImoblrSymbol,
 } from "@/components/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -21,9 +19,6 @@ import { Link } from "expo-router";
 import { Image } from "react-native";
 import { useColorScheme } from "nativewind";
 import { AnimatePresence, View } from "moti";
-
-const GITHUB_AVATAR_URI =
-	"https://i.pinimg.com/originals/ef/a2/8d/efa28d18a04e7fa40ed49eeb0ab660db.jpg";
 
 const formSchema = z.object({
 	email: z.string().email({
@@ -71,7 +66,6 @@ const formSchema = z.object({
 });
 
 export default function Screen() {
-	const [progress, setProgress] = React.useState(78);
 	const { colorScheme } = useColorScheme();
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -84,9 +78,6 @@ export default function Screen() {
 		},
 	});
 
-	function updateProgressValue() {
-		setProgress(Math.floor(Math.random() * 100));
-	}
 	return (
 		<AnimatePresence exitBeforeEnter>
 			<View
@@ -163,10 +154,9 @@ export default function Screen() {
 								/>
 							)}
 						/>
-						<Button className="w-full" size="lg" onPress={updateProgressValue}>
+						<Button className="w-full" size="lg">
 							<Text className="bg-brand">Acessar minha conta</Text>
 						</Button>
-						<Blob>sodkfdsokfs</Blob>
 						<LabelSpacer label="Ou entrar com" />
 						<HStack className="w-full">
 							<Button variant="outline" className="flex-1">
