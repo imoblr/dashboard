@@ -17,8 +17,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "expo-router";
 import { Image } from "react-native";
 import { useColorScheme } from "nativewind";
-import { AnimatePresence } from "moti";
-import { View } from "react-native";
+import { AnimatePresence, View } from "moti";
 import { ImoblrSymbol } from "@/components";
 
 const formSchema = z.object({
@@ -107,7 +106,7 @@ export default function Screen() {
 					>
 						<Center className="mb-8">
 							<ImoblrSymbol className="mb-4" />
-							<Text className="text-2xl text-gray-900 font-medium font-heading">
+							<Text className="text-3xl text-gray-900 font-medium font-heading mb-2">
 								Cadastre sua conta
 							</Text>
 							<Text className="text-sm text-text-quaternary">
@@ -215,7 +214,7 @@ export default function Screen() {
 						key="sign-up-step-2"
 					>
 						<Center className="mb-8">
-							<Text className="text-2xl">Defina sua senha</Text>
+							<Text className="text-2xl font-heading">Defina sua senha</Text>
 							<Text className="text-sm text-text-quaternary">
 								Defina uma senha segura para sua conta.
 							</Text>
@@ -287,11 +286,11 @@ export default function Screen() {
 							type: "timing",
 							duration: 300,
 						}}
-						className="flex h-full w-full items-center justify-center"
+						className="flex flex-1 h-full w-full items-center justify-center"
 						key="sign-up-step-3"
 					>
-						<Center className="mb-8 h-full w-full max-w-[360px]">
-							<View className="mb-2 w-[75%]">
+						<Center className="h-full w-full max-w-[360px]">
+							<View className="mb-2 w-[60vw] h-[60vw] md:w-[25vh] md:h-[25vh]">
 								<LottieView
 									source={require("@/assets/animations/success-animation.json")}
 									style={{ width: "100%", height: "100%" }}
