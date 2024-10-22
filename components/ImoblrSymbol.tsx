@@ -1,8 +1,9 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { Image } from "react-native";
 import { useColorScheme } from "nativewind";
+import Moon from "@/assets/icons/moon.svg";
 
-import { Box } from "./ui";
+import { Box, Icon } from "./ui";
 import { forwardRef } from "react";
 
 const imoblrSymbolVariants = cva("flex", {
@@ -42,6 +43,8 @@ const ImoblrSymbol = forwardRef<
 			ref={ref}
 			{...props}
 		>
+			sdfsdfs
+			<Icon as={Moon} className="stroke-primary-500" />
 			<Image
 				source={
 					colorScheme === "light"
