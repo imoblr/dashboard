@@ -13,7 +13,7 @@ const Text = React.forwardRef<TextRef, SlottableTextProps>(
 		return (
 			<Component
 				className={cn(
-					"web:select-text font-base text-base text-text-secondary",
+					"web:select-text font-body text-base text-text-secondary native:font-medium",
 					textClass,
 					className,
 				)}

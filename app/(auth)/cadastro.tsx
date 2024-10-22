@@ -17,7 +17,8 @@ import { useForm } from "react-hook-form";
 import { Link } from "expo-router";
 import { Image } from "react-native";
 import { useColorScheme } from "nativewind";
-import { AnimatePresence, View } from "moti";
+import { AnimatePresence } from "moti";
+import { View } from "react-native";
 import { ImoblrSymbol } from "@/components";
 
 const formSchema = z.object({
@@ -106,7 +107,9 @@ export default function Screen() {
 					>
 						<Center className="mb-8">
 							<ImoblrSymbol className="mb-4" />
-							<Text className="text-2xl text-gray-900">Cadastre sua conta</Text>
+							<Text className="text-2xl text-gray-900 font-medium font-heading">
+								Cadastre sua conta
+							</Text>
 							<Text className="text-sm text-text-quaternary">
 								Já tem uma conta?{" "}
 								<Link className="text-primary" href={{ pathname: "/entrar" }}>
@@ -116,7 +119,7 @@ export default function Screen() {
 						</Center>
 
 						<Form {...form}>
-							<Box className="w-full max-w-[360px] space-y-4">
+							<View className="w-full max-w-[360px] gap-12">
 								<FormField
 									control={form.control}
 									name="email"
@@ -186,7 +189,7 @@ export default function Screen() {
 									</Link>
 									.
 								</Text>
-							</Box>
+							</View>
 						</Form>
 					</View>
 				)}
@@ -219,7 +222,7 @@ export default function Screen() {
 						</Center>
 
 						<Form {...form}>
-							<Box className="w-full max-w-[360px] space-y-4">
+							<View className="w-full max-w-[360px] space-y-4">
 								<FormField
 									control={form.control}
 									name="password"
@@ -262,7 +265,7 @@ export default function Screen() {
 								>
 									<Text className="bg-brand">Criar minha conta</Text>
 								</Button>
-							</Box>
+							</View>
 						</Form>
 					</View>
 				)}
@@ -288,7 +291,7 @@ export default function Screen() {
 						key="sign-up-step-3"
 					>
 						<Center className="mb-8 h-full w-full max-w-[360px]">
-							<Box className="mb-2 w-[75%]">
+							<View className="mb-2 w-[75%]">
 								<LottieView
 									source={require("@/assets/animations/success-animation.json")}
 									style={{ width: "100%", height: "100%" }}
@@ -296,7 +299,7 @@ export default function Screen() {
 									autoPlay={false}
 									loop={false}
 								/>
-							</Box>
+							</View>
 
 							<Text className="text-2xl">Sua conta foi criada!</Text>
 							<Text className="text-center text-sm text-text-quaternary">

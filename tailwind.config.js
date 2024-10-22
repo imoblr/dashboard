@@ -13,8 +13,11 @@ module.exports = {
       ...colors,
     },
     fontFamily: {
-      base: ['Figtree, Helvetica, Arial, sans-serif'],
-    },
+        heading: ['CalSans, Helvetica, Arial, sans-serif'],
+        body: ['Inter, Helvetica, Arial, sans-serif'],
+        'body-bold': ['Inter-Bold, Helvetica, Arial, sans-serif'],
+        mono: ['Inter, Helvetica, Arial, sans-serif'],
+      },
     borderRadius: {
       'none': '0',
       'xs': '0.16rem',
