@@ -2,8 +2,9 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Image } from "react-native";
 import { useColorScheme } from "nativewind";
 import Moon from "@/assets/icons/moon.svg";
+import ImoblrSymbolLight from "@/assets/logos/imoblr-symbol-light-background.svg";
 
-import { Box, Icon } from "./ui";
+import { Box, Icon, Text } from "./ui";
 import { forwardRef } from "react";
 
 const imoblrSymbolVariants = cva("flex", {
@@ -43,16 +44,9 @@ const ImoblrSymbol = forwardRef<
 			ref={ref}
 			{...props}
 		>
-			sdfsdfs
-			<Icon as={Moon} className="stroke-primary-500" />
-			<Image
-				source={
-					colorScheme === "light"
-						? require("@/assets/logos/imoblr-symbol-light-background.svg")
-						: require("@/assets/logos/imoblr-symbol-dark-background.svg")
-				}
-				alt="imoblr miniature logo"
-				style={{ width: "100%", height: "100%" }}
+			<Icon
+				as={ImoblrSymbolLight}
+				className="stroke-primary-500 w-[100%] h-[100%]"
 			/>
 		</Box>
 	);
