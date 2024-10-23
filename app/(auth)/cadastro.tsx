@@ -22,6 +22,9 @@ import { AnimatePresence, View } from "moti";
 import { ImoblrSymbol } from "@/components";
 import GoogleLogo from "@/assets/logos/google-logo.svg";
 import AppleLogo from "@/assets/logos/apple-logo.svg";
+import DashboardSettingIcon from "@/assets/icons/dashboard-setting.svg";
+import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
+import CheckmarkSquare from "@/assets/icons/checkmark-square.svg";
 
 const formSchema = z.object({
 	email: z.string().email({
@@ -46,7 +49,6 @@ const signUpSteps = [
 
 export default function Screen() {
 	const animationRef = React.useRef<LottieView>(null);
-	const { colorScheme } = useColorScheme();
 	const [signUpStep, setSignUpStep] = React.useState(1);
 	const form = useForm<FormWithInputs>({
 		resolver: zodResolver(formSchema),
@@ -62,7 +64,7 @@ export default function Screen() {
 				animationRef.current?.play();
 				setTimeout(() => {
 					animationRef.current?.pause();
-				}, 2000);
+				}, 4000);
 			}, 750);
 		}
 	}, [signUpStep]);
@@ -109,7 +111,7 @@ export default function Screen() {
 					>
 						<Center className="mb-8">
 							<ImoblrSymbol className="mb-4" size="sm" />
-							<Text className="text-3xl  text-gray-900 font-heading mb-2">
+							<Text className="text-3xl text-gray-900 font-medium mb-2">
 								Crie sua conta
 							</Text>
 							<Text className="text-text-tertiary">
@@ -149,6 +151,10 @@ export default function Screen() {
 									onPress={continueToPassword}
 								>
 									<Text className="bg-brand">Continuar com email</Text>
+									<Icon
+										as={ArrowRightIcon}
+										className=" [&>*]:text-[#FFF] [&>*]:stroke-brand-25 ml-4 text-3xl w-[24px] h-[24px]"
+									/>
 								</Button>
 								<LabelSpacer label="Ou cadastre-se com" />
 								<HStack className="w-full">
@@ -201,7 +207,7 @@ export default function Screen() {
 						key="sign-up-step-2"
 					>
 						<Center className="mb-8">
-							<Text className="text-3xl font-heading">Defina sua senha</Text>
+							<Text className="text-3xl font-bold">Defina sua senha</Text>
 							<Text className="text-sm text-text-quaternary">
 								Defina uma senha segura para sua conta.
 							</Text>
@@ -250,6 +256,10 @@ export default function Screen() {
 									onPress={form.handleSubmit(onSubmit)}
 								>
 									<Text className="bg-brand">Criar minha conta</Text>
+									<Icon
+										as={CheckmarkSquare}
+										className=" [&>*]:text-[#FFF] [&>*]:stroke-brand-25 ml-4 text-3xl w-[24px] h-[24px]"
+									/>
 								</Button>
 							</View>
 						</Form>
@@ -296,6 +306,10 @@ export default function Screen() {
 							</Text>
 							<Link href="/" asChild>
 								<Button className="mt-8 w-full" size="lg">
+									<Icon
+										as={DashboardSettingIcon}
+										className=" [&>*]:text-[#FFF] [&>*]:stroke-brand-25 mr-4"
+									/>
 									<Text className="bg-brand">Visualizar meu painel</Text>
 								</Button>
 							</Link>
