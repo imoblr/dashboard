@@ -1,6 +1,6 @@
 import { Box, Center, Icon, Text } from "@/components/ui";
 import { Slot } from "expo-router";
-import { Image } from "react-native";
+import { Image, Pressable } from "react-native";
 import { useRef, useState } from "react";
 import { View } from "react-native";
 import { useSharedValue } from "react-native-reanimated";
@@ -29,12 +29,12 @@ const testimonials = [
 const width = 480;
 
 export default function AuthLayout() {
-	const ref = useRef<ICarouselInstance>(null);
+	const sliderRef = useRef<ICarouselInstance>(null);
 	const reanimatedProgress = useSharedValue<number>(0);
 	const [slideIndex, setSlideIndex] = useState(0);
 
 	const onPressPagination = (index: number) => {
-		ref.current?.scrollTo({
+		sliderRef.current?.scrollTo({
 			/**
 			 * Calculate the difference between the current index and the target index
 			 * to ensure that the carousel scrolls to the nearest index
@@ -42,6 +42,14 @@ export default function AuthLayout() {
 			count: index - reanimatedProgress.value,
 			animated: true,
 		});
+	};
+
+	const goToNextSlide = () => {
+		console.log("going next");
+		sliderRef.current?.next();
+	};
+	const goToPrevSlide = () => {
+		sliderRef.current?.prev();
 	};
 
 	return (
@@ -58,7 +66,11 @@ export default function AuthLayout() {
 							progress={reanimatedProgress}
 							data={testimonials}
 							dotStyle={{
-								backgroundColor: "rgba(0,0,0,0.2)",
+								backgroundColor: "rgba(255,255,255,0.2)",
+								borderRadius: 50,
+							}}
+							activeDotStyle={{
+								backgroundColor: "rgba(255,255,255,1)",
 								borderRadius: 50,
 							}}
 							containerStyle={{ gap: 5, marginTop: 10 }}
@@ -66,7 +78,9 @@ export default function AuthLayout() {
 						/>
 					</Center>
 					<Carousel
-						ref={ref}
+						ref={sliderRef}
+						autoPlay
+						autoPlayInterval={10000}
 						width={width}
 						// @ts-ignore
 						height="100%"
@@ -96,14 +110,18 @@ export default function AuthLayout() {
 								</Text>
 							</Box>
 							<Box className="flex flex-row items-center gap-2">
-								<Icon
-									as={CircleArrowLeft}
-									className="text-[#FFF] text-xl w-[40px] h-[40px]"
-								/>
-								<Icon
-									as={CircleArrowRight}
-									className="text-[#FFF] text-xl w-[40px] h-[40px]"
-								/>
+								<Pressable onPress={goToPrevSlide}>
+									<Icon
+										as={CircleArrowLeft}
+										className="text-[#FFF] text-xl w-[40px] h-[40px]"
+									/>
+								</Pressable>
+								<Pressable onPress={goToNextSlide}>
+									<Icon
+										as={CircleArrowRight}
+										className="text-[#FFF] text-xl w-[40px] h-[40px]"
+									/>
+								</Pressable>
 							</Box>
 						</Box>
 					</Box>
