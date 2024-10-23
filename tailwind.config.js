@@ -13,9 +13,10 @@ module.exports = {
       ...colors,
     },
     fontFamily: {
-        heading: ['CalSans, Helvetica, Arial, sans-serif'],
-        body: ['Inter, Helvetica, Arial, sans-serif'],
-        'body-bold': ['Inter-Bold, Helvetica, Arial, sans-serif'],
+        heading: ['RethinkSans-SemiBold, Helvetica, Arial, sans-serif'],
+        'heading-medium': ['RethinkSans-Medium, Helvetica, Arial, sans-serif'],
+        body: ['RethinkSans-Regular, Helvetica, Arial, sans-serif'],
+        'body-bold': ['RethinkSans-Bold, Helvetica, Arial, sans-serif'],
         mono: ['Inter, Helvetica, Arial, sans-serif'],
       },
     borderRadius: {

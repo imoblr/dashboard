@@ -91,11 +91,7 @@ const FormItem = React.forwardRef<
 
 	return (
 		<FormItemContext.Provider value={{ nativeID }}>
-			<View
-				ref={ref}
-				className={cn("w-full space-y-2", className)}
-				{...props}
-			/>
+			<View ref={ref} className={cn("w-full gap-2", className)} {...props} />
 		</FormItemContext.Provider>
 	);
 });

@@ -8,9 +8,10 @@ import { useEffect } from "react";
 
 export default function Layout() {
 	const [loaded, error] = useFonts({
-		"Inter-Bold": require("../assets/fonts/Inter-Bold.ttf"),
-		Inter: require("../assets/fonts/Inter-Regular.ttf"),
-		CalSans: require("../assets/fonts/CalSans.ttf"),
+		"RethinkSans-Regular": require("../assets/fonts/RethinkSans-Regular.ttf"),
+		"RethinkSans-Medium": require("../assets/fonts/RethinkSans-Medium.ttf"),
+		"RethinkSans-SemiBold": require("../assets/fonts/RethinkSans-SemiBold.ttf"),
+		"RethinkSans-Bold": require("../assets/fonts/RethinkSans-Bold.ttf"),
 	});
 
 	useEffect(() => {

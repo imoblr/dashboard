@@ -9,16 +9,19 @@ import {
 	FormField,
 	FormInput,
 	HStack,
+	Icon,
 	LabelSpacer,
 } from "@/components/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-// import { ImoblrSymbol } from "@/components/ImoblrSymbol";
+import { ImoblrSymbol } from "@/components/ImoblrSymbol";
 import { Link } from "expo-router";
 import { Image } from "react-native";
 import { useColorScheme } from "nativewind";
 import { AnimatePresence, View } from "moti";
+import GoogleLogo from "@/assets/logos/google-logo.svg";
+import AppleLogo from "@/assets/logos/apple-logo.svg";
 
 const formSchema = z.object({
 	email: z.string().email({
@@ -101,8 +104,10 @@ export default function Screen() {
 				key="login-screen"
 			>
 				<Center className="mb-8">
-					{/* <ImoblrSymbol className="mb-4" /> */}
-					<Text className="text-2xl text-slate-100">Bem-vindo de volta!</Text>
+					<ImoblrSymbol className="mb-4" />
+					<Text className="text-3xl text-gray-900 font-medium font-heading mb-2">
+						Bem-vindo de volta!
+					</Text>
 					<Text className="text-sm text-text-quaternary">
 						Ainda não tem uma conta?{" "}
 						<Link className="text-primary" href={{ pathname: "/cadastro" }}>
@@ -113,7 +118,7 @@ export default function Screen() {
 
 				{/* <ThemeToggle /> */}
 				<Form {...form}>
-					<Box className="w-full max-w-[360px] space-y-4">
+					<Box className="w-full max-w-[360px] gap-4">
 						<FormField
 							control={form.control}
 							name="email"
@@ -160,28 +165,13 @@ export default function Screen() {
 						<LabelSpacer label="Ou entrar com" />
 						<HStack className="w-full">
 							<Button variant="outline" className="flex-1">
-								<Image
-									source={
-										colorScheme === "light"
-											? require("@/assets/logos/google-logo.svg")
-											: require("@/assets/logos/google-logo.svg")
-									}
-									alt="imoblr miniature logo"
-									// @ts-ignore
-									style={{ width: "18px", height: "18.5px" }}
-								/>
+								<Icon as={GoogleLogo} />
 								<Text className="ml-4">Google</Text>
 							</Button>
 							<Button variant="outline" className="flex-1">
-								<Image
-									source={
-										colorScheme === "light"
-											? require("@/assets/logos/apple-logo.svg")
-											: require("@/assets/logos/apple-logo.svg")
-									}
-									alt="imoblr miniature logo"
-									// @ts-ignore
-									style={{ width: "16px", height: "19.8px", marginTop: "-3px" }}
+								<Icon
+									as={AppleLogo}
+									className="text-[#000] w-[22px] h-[22px]"
 								/>
 
 								<Text className="ml-4">Apple</Text>
