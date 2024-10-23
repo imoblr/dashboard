@@ -46,7 +46,8 @@ export default function AuthLayout() {
 		// <View className="flex-1 flex-row p-2 lg:p-8 xl:p-16">
 		<>
 			<View className="flex-1 flex-row p-2 lg:p-8 xl:p-16 bg-background">
-				<Box className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,var(--color-primary-200)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary-200)_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_50%_30vh_at_35%_0%,#000_10%,transparent_180%)]" />
+				<Box className="native:hidden absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,var(--color-primary-500)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary-500)_1px,transparent_1px)] bg-[size:14px_18px] [mask-image:radial-gradient(ellipse_12vw_4vw_at_100vw_0%,#FFF_10%,transparent_800%)] opacity-80" />
+				{/* <Box className="native:hidden absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,var(--color-primary-200)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary-200)_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_50%_30vh_at_35%_0%,#000_10%,transparent_180%)]" /> */}
 				<Box className="flex flex-1 flex-row rounded-l-xxl lg:pr-8 xl:pr-16">
 					<Slot />
 				</Box>

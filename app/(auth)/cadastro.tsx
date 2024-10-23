@@ -16,7 +16,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Link } from "expo-router";
-import { Image } from "react-native";
+import { Image, Platform } from "react-native";
 import { useColorScheme } from "nativewind";
 import { AnimatePresence, View } from "moti";
 import { ImoblrSymbol } from "@/components";
@@ -104,7 +104,7 @@ export default function Screen() {
 							type: "timing",
 							duration: 300,
 						}}
-						className="flex h-full w-full web:items-center web:justify-center native:pt-16"
+						className="flex h-full w-full items-center justify-center"
 						key="sign-up-step-1"
 					>
 						<Center className="mb-8">
@@ -112,12 +112,15 @@ export default function Screen() {
 							<Text className="text-3xl  text-gray-900 font-heading mb-2">
 								Crie sua conta
 							</Text>
-							<Text className="text-text-quaternary text-xl">
-								Já tem uma conta?
+							<Text className="text-text-tertiary text-lg">
+								Já tem uma conta?{" "}
+								<Link
+									className="text-primary font-body"
+									href={{ pathname: "/entrar" }}
+								>
+									Fazer login
+								</Link>
 							</Text>
-							<Link className="text-primary" href={{ pathname: "/entrar" }}>
-								Clique aqui para entrar
-							</Link>
 						</Center>
 
 						<Form {...form}>
@@ -128,7 +131,7 @@ export default function Screen() {
 									render={({ field }) => (
 										<FormInput
 											className="w-full"
-											autoFocus
+											autoFocus={Platform.OS === "web"}
 											label="Email"
 											placeholder="Email"
 											onKeyPress={(e) => {

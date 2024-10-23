@@ -13,12 +13,11 @@ module.exports = {
       ...colors,
     },
     fontFamily: {
-        heading: ['RethinkSans-SemiBold, Helvetica, Arial, sans-serif'],
-        'heading-medium': ['RethinkSans-Medium, Helvetica, Arial, sans-serif'],
-        body: ['RethinkSans-Regular, Helvetica, Arial, sans-serif'],
-        'body-bold': ['RethinkSans-Bold, Helvetica, Arial, sans-serif'],
-        mono: ['Inter, Helvetica, Arial, sans-serif'],
-      },
+      base: ['RethinkSans-Regular, Helvetica, Arial, sans-serif'],
+      medium: ['RethinkSans-Medium, Helvetica, Arial, sans-serif'],
+      bold: ['RethinkSans-SemiBold, Helvetica, Arial, sans-serif'],
+      mono: ['Inter, Helvetica, Arial, sans-serif'],
+    },
     borderRadius: {
       'none': '0',
       'xs': '0.16rem',
