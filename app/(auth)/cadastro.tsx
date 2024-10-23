@@ -108,14 +108,14 @@ export default function Screen() {
 						key="sign-up-step-1"
 					>
 						<Center className="mb-8">
-							<ImoblrSymbol className="mb-4" />
+							<ImoblrSymbol className="mb-4" size="sm" />
 							<Text className="text-3xl  text-gray-900 font-heading mb-2">
 								Crie sua conta
 							</Text>
-							<Text className="text-text-tertiary text-lg">
+							<Text className="text-text-tertiary">
 								Já tem uma conta?{" "}
 								<Link
-									className="text-primary font-body"
+									className="text-primary font-base"
 									href={{ pathname: "/entrar" }}
 								>
 									Fazer login
