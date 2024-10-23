@@ -2,6 +2,8 @@ import * as CheckboxPrimitive from "@rn-primitives/checkbox";
 import * as React from "react";
 import { Platform } from "react-native";
 import { cn } from "@/utils";
+import { Icon } from "./custom";
+import Tick from "../../assets/icons/tick.svg";
 
 const Checkbox = React.forwardRef<
 	React.ElementRef<typeof CheckboxPrimitive.Root>,
@@ -20,12 +22,7 @@ const Checkbox = React.forwardRef<
 			<CheckboxPrimitive.Indicator
 				className={cn("h-full w-full items-center justify-center")}
 			>
-				X
-				{/* <Check
-					size={12}
-					strokeWidth={Platform.OS === "web" ? 2.5 : 3.5}
-					className="text-primary-foreground"
-				/> */}
+				<Icon as={Tick} className="text-text-on-brand h-[16px] w-[16px]" />
 			</CheckboxPrimitive.Indicator>
 		</CheckboxPrimitive.Root>
 	);
