@@ -1,4 +1,4 @@
-import { Box, Center, Text } from "@/components/ui";
+import { Box, Center, Icon, Text } from "@/components/ui";
 import { Slot } from "expo-router";
 import { Image } from "react-native";
 import { useRef, useState } from "react";
@@ -8,6 +8,8 @@ import Carousel, {
 	type ICarouselInstance,
 	Pagination,
 } from "react-native-reanimated-carousel";
+import CircleArrowRight from "../../assets/icons/circle-arrow-right.svg";
+import CircleArrowLeft from "../../assets/icons/circle-arrow-left.svg";
 
 const testimonials = [
 	{
@@ -84,12 +86,26 @@ export default function AuthLayout() {
 						<Text className="mb-2 font-medium text-2xl text-[#FFF]">
 							{testimonials[slideIndex || 0].text}
 						</Text>
-						<Text className="text-[#FFF] text-xl">
-							{testimonials[slideIndex || 0].name}
-						</Text>
-						<Text className="text-[#FFF] text-sm">
-							{testimonials[slideIndex || 0].job}
-						</Text>
+						<Box className="flex flex-row items-center justify-between gap-2">
+							<Box>
+								<Text className="text-[#FFF] text-xl">
+									{testimonials[slideIndex || 0].name}
+								</Text>
+								<Text className="text-[#FFF] text-sm">
+									{testimonials[slideIndex || 0].job}
+								</Text>
+							</Box>
+							<Box className="flex flex-row items-center gap-2">
+								<Icon
+									as={CircleArrowLeft}
+									className="text-[#FFF] text-xl w-[40px] h-[40px]"
+								/>
+								<Icon
+									as={CircleArrowRight}
+									className="text-[#FFF] text-xl w-[40px] h-[40px]"
+								/>
+							</Box>
+						</Box>
 					</Box>
 				</Box>
 			</View>
