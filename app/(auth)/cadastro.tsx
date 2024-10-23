@@ -120,7 +120,7 @@ export default function Screen() {
 									className="text-primary font-base"
 									href={{ pathname: "/entrar" }}
 								>
-									Fazer login
+									Clique para logar
 								</Link>
 							</Text>
 						</Center>
@@ -153,7 +153,7 @@ export default function Screen() {
 									<Text className="bg-brand">Continuar com email</Text>
 									<Icon
 										as={ArrowRightIcon}
-										className=" [&>*]:text-[#FFF] [&>*]:stroke-brand-25 ml-4 text-3xl w-[24px] h-[24px]"
+										className="text-text-inverse ml-4 text-3xl w-[24px] h-[24px]"
 									/>
 								</Button>
 								<LabelSpacer label="Ou cadastre-se com" />
@@ -258,7 +258,7 @@ export default function Screen() {
 									<Text className="bg-brand">Criar minha conta</Text>
 									<Icon
 										as={CheckmarkSquare}
-										className=" [&>*]:text-[#FFF] [&>*]:stroke-brand-25 ml-4 text-3xl w-[24px] h-[24px]"
+										className="text-text-inverse ml-4 text-3xl w-[24px] h-[24px]"
 									/>
 								</Button>
 							</View>
@@ -308,7 +308,7 @@ export default function Screen() {
 								<Button className="mt-8 w-full" size="lg">
 									<Icon
 										as={DashboardSettingIcon}
-										className=" [&>*]:text-[#FFF] [&>*]:stroke-brand-25 mr-4"
+										className="text-text-inverse mr-4"
 									/>
 									<Text className="bg-brand">Visualizar meu painel</Text>
 								</Button>

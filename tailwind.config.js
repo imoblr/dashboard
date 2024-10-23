@@ -100,6 +100,7 @@ module.exports = {
         // -----------------------------------------------------------------------------
         'text': {
           DEFAULT: 'var(--color-text)',
+          'inverse': 'var(--color-text-inverse)',
           'on-brand': 'var(--color-text-on-brand)',
           'secondary': 'var(--color-text-secondary)',
           'secondary_hover': 'var(--color-text-secondary_hover)',

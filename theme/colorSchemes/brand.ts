@@ -54,6 +54,7 @@ export const brand = {
     // TYPOGRAPHY COLORS
     // -----------------------------------------------------------------------------
     '--color-text': gray['900'],
+    '--color-text-inverse': 'white',
     '--color-text-on-brand': 'white',
     '--color-text-secondary': gray['700'],
     '--color-text-secondary_hover': gray['800'],
