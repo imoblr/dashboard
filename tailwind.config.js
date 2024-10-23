@@ -28,6 +28,7 @@ module.exports = {
       'xl': '0.8rem',
       '2xl': '1rem',
       '3xl': '1.4rem',
+      '4xl': '1.8rem',
       'full': '9999px',
     },
     extend: {

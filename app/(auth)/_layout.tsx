@@ -50,7 +50,7 @@ export default function AuthLayout() {
 				<Box className="flex flex-1 flex-row rounded-l-xxl lg:pr-8 xl:pr-16">
 					<Slot />
 				</Box>
-				<Box className="position-relative hidden w-[480px] flex-row overflow-hidden rounded-xxl shadow-3xl lg:flex">
+				<Box className="position-relative hidden w-[480px] flex-row overflow-hidden rounded-4xl shadow-3xl lg:flex">
 					<Center className="absolute top-0 left-0 z-10 w-full">
 						<Pagination.Basic
 							progress={reanimatedProgress}
