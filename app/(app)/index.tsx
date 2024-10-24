@@ -3,17 +3,13 @@ import { Stack, Link } from "expo-router";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { ScreenContent } from "@/components/ScreenContent";
+import { Box } from "@/components/ui";
 
 export default function Home() {
 	return (
-		<>
+		<Box className="flex-1 overflow-hidden bg-background">
 			<Stack.Screen options={{ title: "Home" }} />
-			<Container>
-				<ScreenContent path="app/index.tsx" title="Home" />
-				<Link href={{ pathname: "/cadastro", params: { name: "Dan" } }} asChild>
-					<Button title="Show Details" />
-				</Link>
-			</Container>
-		</>
+			<Box>sdgoksdgoksd</Box>
+		</Box>
 	);
 }

@@ -3,8 +3,8 @@ import { Stack } from "expo-router";
 
 export default function Layout() {
 	return (
-		<Box className="flex-1 flex-row overflow-hidden">
-			<Box className="bg-brand-25 w-[80px] h-full">side</Box>
+		<Box className="flex-1 flex-row overflow-hidden bg-background">
+			<Box className="bg-background-darker w-[64px] h-full">side</Box>
 			<Box className="flex-1">
 				<Stack screenOptions={{ headerShown: false }} />
 			</Box>
