@@ -2,9 +2,23 @@ import { Box } from "../ui";
 import { PropertiesIcon } from "./icons/PropertiesIcon";
 import MenuSection, { type MenuSectionProps } from "./MenuSection";
 
+const menuIconSize = 20;
+
+const getIconProps = (isActive: boolean) => {
+	return {
+		width: menuIconSize,
+		height: menuIconSize,
+		primaryGradientStart: isActive ? "primary-600" : "primary-500",
+		primaryGradientEnd: isActive ? "primary-700" : "primary-600",
+		secondaryGradientStart: isActive ? "primary-600" : "primary-500",
+		secondaryGradientEnd: isActive ? "primary-700" : "primary-600",
+	};
+};
+
 const SidebarMenu = () => {
-	const menuItems = [
+	const menuSections = [
 		{
+			id: "main",
 			title: undefined,
 			items: [
 				{
@@ -12,16 +26,19 @@ const SidebarMenu = () => {
 					href: {
 						pathname: "/",
 					},
-					icon: <PropertiesIcon width={24} height={24} />,
+					icon: <PropertiesIcon {...getIconProps(true)} />,
 				},
 			],
 		},
 	];
 
 	return (
-		<Box>
-			{menuItems.map((section) => (
-				<MenuSection key={section.title} {...(section as MenuSectionProps)} />
+		<Box className="mt-8">
+			{menuSections.map((section) => (
+				<MenuSection
+					key={`sidebar-menu-section-${section.id}`}
+					{...(section as MenuSectionProps)}
+				/>
 			))}
 		</Box>
 	);

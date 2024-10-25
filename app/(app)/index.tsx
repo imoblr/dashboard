@@ -9,7 +9,6 @@ export default function Home() {
 	return (
 		<Box className="flex-1 overflow-hidden bg-background">
 			<Stack.Screen options={{ title: "Home" }} />
-			<Box>sdgoksdgoksd</Box>
 		</Box>
 	);
 }

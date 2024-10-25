@@ -9,6 +9,7 @@ export type SectionItemProps = {
 };
 
 export type MenuSectionProps = {
+	id: string;
 	title?: string;
 	items: SectionItemProps[];
 };
@@ -22,11 +23,11 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 			{items.map((item) => (
 				<Link asChild href={item.href} key={`menu-${title}-${item.title}`}>
 					<Box>
-						<Box className="flex flex-row items-center gap-3 rounded-lg p-2 text-text-secondary">
+						<Box className="flex flex-row items-center gap-3 p-2 text-text-secondary">
 							{item.icon as React.ReactNode}
-							<Text className="font-medium">{item.title}</Text>
+							<Text className="font-medium text-primary-800">{item.title}</Text>
 						</Box>
-						<Box className="absolute left-0 top-0 h-full w-full rounded-lg bg-primary z-[-1]" />
+						<Box className="absolute left-0 top-0 h-full w-full rounded bg-primary-100 z-[-1]" />
 					</Box>
 				</Link>
 			))}
