@@ -22,6 +22,7 @@ const SidebarMenu = () => {
 			title: undefined,
 			items: [
 				{
+					isActive: true,
 					title: "Visão geral",
 					href: {
 						pathname: "/",
@@ -35,6 +36,7 @@ const SidebarMenu = () => {
 			title: "Menu principal",
 			items: [
 				{
+					isActive: false,
 					title: "Imóveis",
 					href: {
 						pathname: "/",
@@ -42,6 +44,7 @@ const SidebarMenu = () => {
 					icon: <PropertiesIcon {...getIconProps(true)} />,
 				},
 				{
+					isActive: false,
 					title: "Clientes e leads",
 					href: {
 						pathname: "/",
@@ -49,6 +52,7 @@ const SidebarMenu = () => {
 					icon: <PropertiesIcon {...getIconProps(true)} />,
 				},
 				{
+					isActive: false,
 					title: "Agendamentos",
 					href: {
 						pathname: "/",

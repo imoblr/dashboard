@@ -3,6 +3,7 @@ import { Link, type Href } from "expo-router";
 import { Box, Text } from "../ui";
 
 export type SectionItemProps = {
+	isActive?: boolean;
 	title: string;
 	href: Href<string | object>;
 	icon: IIconComponentType<object> | React.ReactNode;
@@ -27,9 +28,15 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 					<Box>
 						<Box className="flex flex-row items-center gap-3 px-3 py-2 text-text-secondary">
 							{item.icon as React.ReactNode}
-							<Text className="font-medium text-primary-800">{item.title}</Text>
+							<Text
+								className={`font-medium ${item.isActive ? "text-primary-800" : "text-text-secondary"}`}
+							>
+								{item.title}
+							</Text>
 						</Box>
-						<Box className="absolute left-0 top-0 h-full w-full rounded-lg bg-primary-100 z-[-1]" />
+						{item.isActive && (
+							<Box className="absolute left-0 top-0 h-full w-full rounded-lg bg-primary-100 z-[-1]" />
+						)}
 					</Box>
 				</Link>
 			))}
