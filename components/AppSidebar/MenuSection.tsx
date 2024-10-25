@@ -13,19 +13,6 @@ export type MenuSectionProps = {
 	items: SectionItemProps[];
 };
 
-const SectionItem = ({ title, href, icon }: SectionItemProps) => {
-	return (
-		<Link asChild href={href} key={title}>
-			<Box>
-				<Box className="flex flex-row items-center gap-3 rounded-lg p-2 text-text-secondary">
-					<Text className="font-medium">{title}</Text>
-				</Box>
-				<Box className="absolute left-0 top-0 h-full w-full rounded-lg bg-primary z-[-1]" />
-			</Box>
-		</Link>
-	);
-};
-
 const MenuSection = ({ title, items }: MenuSectionProps) => {
 	return (
 		<Box className="flex flex-col gap-2">
@@ -33,10 +20,15 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 				<Text className="text-text-secondary text-sm font-medium">{title}</Text>
 			)}
 			{items.map((item) => (
-				<SectionItem
-					key={`nav-item-${item.title}`}
-					{...(item as SectionItemProps)}
-				/>
+				<Link asChild href={item.href} key={`menu-${title}-${item.title}`}>
+					<Box>
+						<Box className="flex flex-row items-center gap-3 rounded-lg p-2 text-text-secondary">
+							{item.icon as React.ReactNode}
+							<Text className="font-medium">{item.title}</Text>
+						</Box>
+						<Box className="absolute left-0 top-0 h-full w-full rounded-lg bg-primary z-[-1]" />
+					</Box>
+				</Link>
 			))}
 		</Box>
 	);

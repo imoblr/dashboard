@@ -12,7 +12,7 @@ const SidebarMenu = () => {
 					href: {
 						pathname: "/",
 					},
-					icon: PropertiesIcon,
+					icon: <PropertiesIcon width={24} height={24} />,
 				},
 			],
 		},
