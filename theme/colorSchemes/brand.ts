@@ -62,7 +62,7 @@ export const brand = {
     '--color-text-tertiary': gray['600'],
     '--color-text-tertiary_hover': gray['700'],
     '--color-text-tertiary_on-brand': brandColor['200'],
-    '--color-text-quaternary': gray['500'],
+    '--color-text-quaternary': gray['400'],
     '--color-text-quaternary_on-brand': brandColor['300'],
     '--color-text-disabled': gray['500'],
     '--color-text-placeholder': gray['500'],

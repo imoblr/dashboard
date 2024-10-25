@@ -18,11 +18,58 @@ const getIconProps = (isActive: boolean) => {
 const SidebarMenu = () => {
 	const menuSections = [
 		{
-			id: "main",
+			id: "dashboard",
 			title: undefined,
 			items: [
 				{
-					title: "Dashboard",
+					title: "Visão geral",
+					href: {
+						pathname: "/",
+					},
+					icon: <PropertiesIcon {...getIconProps(true)} />,
+				},
+			],
+		},
+		{
+			id: "main",
+			title: "Menu principal",
+			items: [
+				{
+					title: "Imóveis",
+					href: {
+						pathname: "/",
+					},
+					icon: <PropertiesIcon {...getIconProps(true)} />,
+				},
+				{
+					title: "Clientes e leads",
+					href: {
+						pathname: "/",
+					},
+					icon: <PropertiesIcon {...getIconProps(true)} />,
+				},
+				{
+					title: "Agendamentos",
+					href: {
+						pathname: "/",
+					},
+					icon: <PropertiesIcon {...getIconProps(true)} />,
+				},
+			],
+		},
+		{
+			id: "marketing",
+			title: "Marketing",
+			items: [
+				{
+					title: "Canais e Integrações",
+					href: {
+						pathname: "/",
+					},
+					icon: <PropertiesIcon {...getIconProps(true)} />,
+				},
+				{
+					title: "Meu website",
 					href: {
 						pathname: "/",
 					},
