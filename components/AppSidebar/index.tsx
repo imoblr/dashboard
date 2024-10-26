@@ -5,12 +5,23 @@ import CollapseRightIcon from "@/assets/icons/collapse-right.svg";
 
 import SidebarMenu from "./SidebarMenu";
 import { Pressable } from "react-native";
+import { useState } from "react";
 
 const AppSidebar = () => {
+	const [isCollapsed, setIsCollapsed] = useState(true);
+	const toggleCollapse = () => {
+		setIsCollapsed(!isCollapsed);
+	};
+
 	return (
 		<Box className="w-[64px] h-full overflow-visible z-50">
-			<Box className="h-full w-[240px] bg-background border-r-[1px] border-border-lighter p-2 pt-4 shadow-xs">
-				<Pressable className="absolute top-8 right-[-16px] z-50">
+			<Box
+				className={`h-full w-[${isCollapsed ? "60px" : "240px"}] bg-background border-r-[1px] border-border-lighter p-2 pt-4 shadow-xs`}
+			>
+				<Pressable
+					className="absolute top-8 right-[-16px] z-50"
+					onPress={toggleCollapse}
+				>
 					<Center className="h-[32px] w-[32px] hover:bg-primary-25 bg-background rounded-full border border-border shadow-xs">
 						<Icon
 							as={CollapseLeftIcon}
