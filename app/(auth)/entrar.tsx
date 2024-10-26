@@ -108,8 +108,8 @@ export default function Screen() {
 					<Text className="text-3xl text-gray-900 font-medium font-heading mb-2">
 						Bem-vindo de volta!
 					</Text>
-					<Text className="text-sm text-text-quaternary">
-						Ainda não tem uma conta?{" "}
+					<Text className="text-text-tertiary">
+						Não tem uma conta?{" "}
 						<Link className="text-primary" href={{ pathname: "/cadastro" }}>
 							Crie uma agora
 						</Link>

@@ -151,10 +151,6 @@ export default function Screen() {
 									onPress={continueToPassword}
 								>
 									<Text className="bg-brand">Continuar com email</Text>
-									<Icon
-										as={ArrowRightIcon}
-										className="text-text-inverse ml-4 text-3xl w-[24px] h-[24px]"
-									/>
 								</Button>
 								<LabelSpacer label="Ou cadastre-se com" />
 								<HStack className="w-full">
