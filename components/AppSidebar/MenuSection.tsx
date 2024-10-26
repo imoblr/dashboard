@@ -1,6 +1,6 @@
 import type { IIconComponentType } from "@gluestack-ui/icon/lib/typescript/createIcon";
 import { Link, type Href } from "expo-router";
-import { Box, Text } from "../ui";
+import { Box, Icon, Text } from "../ui";
 
 export type SectionItemProps = {
 	isActive?: boolean;
@@ -32,9 +32,15 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 				>
 					<Box>
 						<Box className="flex flex-row items-center gap-3 px-3 py-2 text-text-secondary">
-							{item.icon as React.ReactNode}
+							<Icon
+								as={item.icon}
+								size="xl"
+								className={
+									item.isActive ? "text-primary-900" : "text-text-secondary"
+								}
+							/>
 							<Text
-								className={`font-medium text-sm ${item.isActive ? "text-primary-800" : "text-text-secondary"}`}
+								className={`text-sm ${item.isActive ? "text-primary-800" : "text-text-secondary"}`}
 							>
 								{item.title}
 							</Text>

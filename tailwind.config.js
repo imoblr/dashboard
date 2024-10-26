@@ -48,7 +48,10 @@ module.exports = {
           DEFAULT: 'var(--color-shadow)',
           light: 'var(--color-shadow-light)',
         },
-        border: 'var(--color-border)',
+        border: {
+          DEFAULT: 'var(--color-border)',
+          lighter: 'var(--color-border-lighter)',
+        },
         ring: 'hsl(var(--ring))',
 
         background: {

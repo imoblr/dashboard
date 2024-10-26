@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/theme";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
 import { useEffect } from "react";
 
 export default function Layout() {
@@ -26,7 +26,7 @@ export default function Layout() {
 
 	return (
 		<ThemeProvider colorScheme="brand">
-			<Stack screenOptions={{ headerShown: false }} />
+			<Slot />
 		</ThemeProvider>
 	);
 }
