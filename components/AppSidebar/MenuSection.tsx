@@ -70,7 +70,7 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 										easing: Easing.linear,
 										duration: 300,
 									}}
-									className="absolute left-0 top-0 h-full w-full rounded-lg bg-gray-100 z-[-1]"
+									className="absolute left-0 top-0 h-full w-full rounded-lg bg-background-darker z-[-1]"
 								/>
 							)}
 						</AnimatePresence>
