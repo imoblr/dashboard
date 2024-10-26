@@ -17,6 +17,7 @@
     "@gluestack-ui/icon": "^0.1.22",
     "@hookform/resolvers": "^3.9.0",
     "@lottiefiles/dotlottie-react": "^0.9.1",
+    "@react-native-async-storage/async-storage": "1.23.1",
     "@react-navigation/native": "^6.1.7",
     "@rn-primitives/avatar": "^1.0.6",
     "@rn-primitives/checkbox": "^1.0.5",

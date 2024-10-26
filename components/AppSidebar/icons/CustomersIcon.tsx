@@ -2,7 +2,7 @@ import { Defs, LinearGradient, Path, Stop, Svg } from "react-native-svg";
 import { createIcon } from "@gluestack-ui/icon";
 import { useCurrentColorScheme } from "@/hooks";
 
-const PropertiesIcon = ({
+const CustomersIcon = ({
 	isActive,
 	...props
 }: { isActive?: boolean; width: number; height: number }) => {
@@ -83,5 +83,5 @@ const PropertiesIcon = ({
 	return <IconComponent {...props} />;
 };
 
-PropertiesIcon.displayName = "PropertiesIcon";
-export { PropertiesIcon };
+CustomersIcon.displayName = "CustomersIcon";
+export { CustomersIcon };

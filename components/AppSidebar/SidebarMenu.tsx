@@ -1,33 +1,39 @@
-import { Box } from "../ui";
+import { Box, Icon } from "../ui";
 import { PropertiesIcon } from "./icons/PropertiesIcon";
 import MenuSection, { type MenuSectionProps } from "./MenuSection";
+import { usePathname } from "expo-router";
+import DashboardIcon from "@/assets/icons/duotone/dashboard-browsing.svg";
+import BuildingIcon from "@/assets/icons/duotone/buildings.svg";
+import CustomersIcon from "@/assets/icons/duotone/mentoring.svg";
+import CalendarIcon from "@/assets/icons/duotone/calendar.svg";
+import BlockchainIcon from "@/assets/icons/duotone/blockchain.svg";
+import BrowserIcon from "@/assets/icons/duotone/browser.svg";
 
-const menuIconSize = 20;
-
-const getIconProps = (isActive: boolean) => {
-	return {
-		width: menuIconSize,
-		height: menuIconSize,
-		primaryGradientStart: isActive ? "primary-600" : "primary-500",
-		primaryGradientEnd: isActive ? "primary-700" : "primary-600",
-		secondaryGradientStart: isActive ? "primary-600" : "primary-500",
-		secondaryGradientEnd: isActive ? "primary-700" : "primary-600",
-	};
-};
+const menuIconSize = 60;
 
 const SidebarMenu = () => {
+	const pathname = usePathname();
+
 	const menuSections = [
 		{
 			id: "dashboard",
 			title: undefined,
 			items: [
 				{
-					isActive: true,
+					isActive: pathname === "/",
 					title: "Visão geral",
 					href: {
 						pathname: "/",
 					},
-					icon: <PropertiesIcon {...getIconProps(true)} />,
+					icon: (
+						<Icon
+							as={DashboardIcon}
+							size="xl"
+							className={
+								pathname === "/" ? "text-primary-900" : "text-text-secondary"
+							}
+						/>
+					),
 				},
 			],
 		},
@@ -36,28 +42,58 @@ const SidebarMenu = () => {
 			title: "Menu principal",
 			items: [
 				{
-					isActive: false,
+					isActive: pathname === "/imoveis",
 					title: "Imóveis",
 					href: {
-						pathname: "/",
+						pathname: "/imoveis",
 					},
-					icon: <PropertiesIcon {...getIconProps(true)} />,
+					icon: (
+						<Icon
+							as={BuildingIcon}
+							size="xl"
+							className={
+								pathname === "/imoveis"
+									? "text-primary-900"
+									: "text-text-secondary"
+							}
+						/>
+					),
 				},
 				{
-					isActive: false,
+					isActive: pathname === "/clientes",
 					title: "Clientes e leads",
 					href: {
-						pathname: "/",
+						pathname: "/clientes",
 					},
-					icon: <PropertiesIcon {...getIconProps(true)} />,
+					icon: (
+						<Icon
+							as={CustomersIcon}
+							size="xl"
+							className={
+								pathname === "/clientes"
+									? "text-primary-900"
+									: "text-text-secondary"
+							}
+						/>
+					),
 				},
 				{
-					isActive: false,
+					isActive: pathname === "/agenda",
 					title: "Agendamentos",
 					href: {
-						pathname: "/",
+						pathname: "/agenda",
 					},
-					icon: <PropertiesIcon {...getIconProps(true)} />,
+					icon: (
+						<Icon
+							as={CalendarIcon}
+							size="xl"
+							className={
+								pathname === "/agenda"
+									? "text-primary-900"
+									: "text-text-secondary"
+							}
+						/>
+					),
 				},
 			],
 		},
@@ -68,16 +104,36 @@ const SidebarMenu = () => {
 				{
 					title: "Canais e Integrações",
 					href: {
-						pathname: "/",
+						pathname: "/canais",
 					},
-					icon: <PropertiesIcon {...getIconProps(true)} />,
+					icon: (
+						<Icon
+							as={BlockchainIcon}
+							size="xl"
+							className={
+								pathname === "/canais"
+									? "text-primary-900"
+									: "text-text-secondary"
+							}
+						/>
+					),
 				},
 				{
 					title: "Meu website",
 					href: {
-						pathname: "/",
+						pathname: "/website",
 					},
-					icon: <PropertiesIcon {...getIconProps(true)} />,
+					icon: (
+						<Icon
+							as={BrowserIcon}
+							size="xl"
+							className={
+								pathname === "/website"
+									? "text-primary-900"
+									: "text-text-secondary"
+							}
+						/>
+					),
 				},
 			],
 		},

@@ -8,7 +8,7 @@ const AppSidebar = () => {
 		<Box className="w-[64px] h-full overflow-visible z-50">
 			<Box className="h-full w-[240px] bg-background-darker border-r-[1px] border-border p-2 pt-4">
 				<Box className="pl-2">
-					<ImoblrSidebarLogo width={110} height={32} />
+					<ImoblrSidebarLogo width={100} height={28} />
 				</Box>
 				<SidebarMenu />
 			</Box>
