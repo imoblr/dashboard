@@ -21,7 +21,7 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 	return (
 		<Box className="flex flex-col gap-1">
 			{title && (
-				<Text className="text-text-quaternary text-xs font-medium uppercase ml-3 mt-4">
+				<Text className="text-text-quaternary select-none text-xs font-medium uppercase ml-3 mt-4">
 					{title}
 				</Text>
 			)}
@@ -37,10 +37,10 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 							<Icon
 								as={item.icon}
 								size="xl"
-								className={`transition-all ease-in-out duration-300 ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
+								className={`transition-all ease-in-out duration-300 select-none ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
 							/>
 							<Text
-								className={`transition-all ease-in-out duration-300 text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
+								className={`transition-all ease-in-out duration-300 select-none text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
 							>
 								{item.title}
 							</Text>
@@ -68,7 +68,7 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 									exitTransition={{
 										type: "timing",
 										easing: Easing.linear,
-										duration: 200,
+										duration: 300,
 									}}
 									className="absolute left-0 top-0 h-full w-full rounded-lg bg-gray-100 z-[-1]"
 								/>
