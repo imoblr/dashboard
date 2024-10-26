@@ -39,11 +39,13 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 								size="xl"
 								className={`transition-all ease-in-out duration-300 select-none ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
 							/>
-							<Text
-								className={`transition-all ease-in-out duration-300 select-none text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
-							>
-								{item.title}
-							</Text>
+							<AnimatePresence exitBeforeEnter>
+								<Text
+									className={`transition-all ease-in-out duration-300 select-none text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
+								>
+									{item.title}
+								</Text>
+							</AnimatePresence>
 						</Box>
 						<AnimatePresence exitBeforeEnter>
 							{item.isActive && (

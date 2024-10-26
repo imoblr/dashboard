@@ -6,6 +6,8 @@ import CollapseRightIcon from "@/assets/icons/collapse-right.svg";
 import SidebarMenu from "./SidebarMenu";
 import { Pressable } from "react-native";
 import { useState } from "react";
+import { View } from "moti";
+import { Easing } from "react-native-reanimated";
 
 const AppSidebar = () => {
 	const [isCollapsed, setIsCollapsed] = useState(true);
@@ -14,12 +16,20 @@ const AppSidebar = () => {
 	};
 
 	return (
-		<Box className="w-[64px] h-full overflow-visible z-50">
-			<Box
-				className={`h-full w-[${isCollapsed ? "60px" : "240px"}] bg-background border-r-[1px] border-border-lighter p-2 pt-4 shadow-xs`}
+		<View
+			animate={{ width: isCollapsed ? 64 : 240 }}
+			transition={{ damping: 6, mass: 0.2, stiffness: 80, type: "spring" }}
+			className={"h-full overflow-visible z-50"}
+		>
+			<View
+				animate={{ width: isCollapsed ? 60 : 240 }}
+				transition={{ damping: 6, mass: 0.2, stiffness: 80, type: "spring" }}
+				className={
+					"h-full bg-background border-r-[1px] border-border-lighter p-2 pt-4 shadow-xs"
+				}
 			>
 				<Pressable
-					className="absolute top-8 right-[-16px] z-50"
+					className={`transition-all ease-in-out duration-500 absolute top-8 right-[-16px] z-50 ${isCollapsed ? "rotate-180" : "rotate-0"}`}
 					onPress={toggleCollapse}
 				>
 					<Center className="h-[32px] w-[32px] hover:bg-primary-25 bg-background rounded-full border border-border shadow-xs">
@@ -33,8 +43,8 @@ const AppSidebar = () => {
 					<ImoblrSidebarLogo width={100} height={28} />
 				</Box>
 				<SidebarMenu />
-			</Box>
-		</Box>
+			</View>
+		</View>
 	);
 };
 
