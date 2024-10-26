@@ -36,11 +36,11 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 								as={item.icon}
 								size="xl"
 								className={
-									item.isActive ? "text-primary-900" : "text-text-secondary"
+									item.isActive ? "text-primary-900" : "text-text-tertiary"
 								}
 							/>
 							<Text
-								className={`text-sm ${item.isActive ? "text-primary-800" : "text-text-secondary"}`}
+								className={`text-sm ${item.isActive ? "text-primary-800" : "text-text-tertiary"}`}
 							>
 								{item.title}
 							</Text>
