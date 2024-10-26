@@ -1,6 +1,8 @@
 import type { IIconComponentType } from "@gluestack-ui/icon/lib/typescript/createIcon";
 import { Link, type Href } from "expo-router";
 import { Box, Icon, Text } from "../ui";
+import { AnimatePresence, View } from "moti";
+import { Easing } from "react-native-reanimated";
 
 export type SectionItemProps = {
 	isActive?: boolean;
@@ -35,19 +37,43 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 							<Icon
 								as={item.icon}
 								size="xl"
-								className={
-									item.isActive ? "text-primary-900" : "text-text-tertiary"
-								}
+								className={`transition-all ease-in-out duration-300 ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
 							/>
 							<Text
-								className={`text-sm ${item.isActive ? "text-primary-800" : "text-text-tertiary"}`}
+								className={`transition-all ease-in-out duration-300 text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
 							>
 								{item.title}
 							</Text>
 						</Box>
-						{item.isActive && (
-							<Box className="absolute left-0 top-0 h-full w-full rounded-lg bg-primary-100 z-[-1]" />
-						)}
+						<AnimatePresence exitBeforeEnter>
+							{item.isActive && (
+								<View
+									from={{
+										opacity: 0,
+										width: 0,
+									}}
+									animate={{
+										opacity: 1,
+										width: 220,
+									}}
+									exit={{
+										opacity: 0,
+										width: 0,
+									}}
+									transition={{
+										type: "timing",
+										easing: Easing.elastic(1),
+										duration: 300,
+									}}
+									exitTransition={{
+										type: "timing",
+										easing: Easing.linear,
+										duration: 200,
+									}}
+									className="absolute left-0 top-0 h-full w-full rounded-lg bg-gray-100 z-[-1]"
+								/>
+							)}
+						</AnimatePresence>
 					</Box>
 				</Link>
 			))}

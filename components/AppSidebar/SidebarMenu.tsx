@@ -7,6 +7,7 @@ import CustomersIcon from "@/assets/icons/duotone/mentoring.svg";
 import CalendarIcon from "@/assets/icons/duotone/calendar.svg";
 import BlockchainIcon from "@/assets/icons/duotone/blockchain.svg";
 import BrowserIcon from "@/assets/icons/duotone/browser.svg";
+import { AnimatePresence } from "moti";
 
 const SidebarMenu = () => {
 	const pathname = usePathname();
@@ -80,12 +81,14 @@ const SidebarMenu = () => {
 
 	return (
 		<Box className="mt-8">
-			{menuSections.map((section) => (
-				<MenuSection
-					key={`sidebar-menu-section-${section.id}`}
-					{...(section as MenuSectionProps)}
-				/>
-			))}
+			<AnimatePresence exitBeforeEnter>
+				{menuSections.map((section) => (
+					<MenuSection
+						key={`sidebar-menu-section-${section.id}`}
+						{...(section as MenuSectionProps)}
+					/>
+				))}
+			</AnimatePresence>
 		</Box>
 	);
 };
