@@ -49,19 +49,41 @@ const MenuSection = ({ title, items, isCollapsed }: MenuSectionProps) => {
 								size="xl"
 								className={`transition-all ease-in-out duration-300 select-none ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
 							/>
-							<View
-								animate={{
-									width: isCollapsed ? 0 : 180,
-									display: item.isActive ? "flex" : "none",
-								}}
-								className="overflow-hidden"
-							>
-								<Text
-									className={`whitespace-nowrap transition-all ease-in-out duration-300 select-none text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
-								>
-									{item.title}
-								</Text>
-							</View>
+							<AnimatePresence exitBeforeEnter>
+								{!isCollapsed && (
+									<View
+										from={{
+											opacity: 0,
+											width: 0,
+										}}
+										animate={{
+											opacity: 1,
+											width: 160,
+										}}
+										exit={{
+											opacity: 0,
+											width: 0,
+										}}
+										transition={{
+											type: "timing",
+											easing: Easing.elastic(1),
+											duration: 400,
+										}}
+										exitTransition={{
+											type: "timing",
+											easing: Easing.linear,
+											duration: 50,
+										}}
+										className="overflow-hidden"
+									>
+										<Text
+											className={`whitespace-nowrap transition-all ease-in-out duration-300 select-none text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
+										>
+											{item.title}
+										</Text>
+									</View>
+								)}
+							</AnimatePresence>
 						</Box>
 						<AnimatePresence exitBeforeEnter>
 							{item.isActive && (
