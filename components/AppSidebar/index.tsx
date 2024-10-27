@@ -1,13 +1,12 @@
 import { Box, Center, Icon, Text } from "../ui";
 import ImoblrSidebarLogo from "@/assets/logos/imoblr-sidebar-logo.svg";
-import CollapseLeftIcon from "@/assets/icons/unpin.svg";
-import CollapseRightIcon from "@/assets/icons/pin.svg";
+import UnpinIcon from "@/assets/icons/unpin.svg";
+import PinIcon from "@/assets/icons/pin.svg";
 
 import SidebarMenu from "./SidebarMenu";
 import { Pressable } from "react-native";
 import { useState } from "react";
 import { View } from "moti";
-import { MotiPressable } from "moti/interactions";
 
 const AppSidebar = () => {
 	const [isPinned, setIsPinned] = useState(true);
@@ -47,9 +46,25 @@ const AppSidebar = () => {
 						className={"transition-all ease-in-out duration-500"}
 						onPress={toggleIsPinned}
 					>
-						<Center className="h-[32px] w-[32px] hover:bg-primary-25 bg-background rounded-full border border-border shadow-xs">
+						<Center className="h-[32px] w-[32px] hover:bg-primary-25 bg-background rounded-full border border-border shadow-xs overflow-hidden">
+							<View
+								animate={{ scale: isPinned ? 1 : 0 }}
+								style={{ width: 32, height: 64 }}
+								transition={{
+									damping: 5,
+									mass: 0.2,
+									stiffness: 60,
+									type: "spring",
+								}}
+								className="absolute h-[32px] w-[64px] justify-center items-center bg-gray-950 rounded-full"
+							>
+								<Icon
+									as={UnpinIcon}
+									className="text-text-inverse w-[18px] h-[18px]"
+								/>
+							</View>
 							<Icon
-								as={CollapseLeftIcon}
+								as={PinIcon}
 								className="text-text-tertiary w-[18px] h-[18px]"
 							/>
 						</Center>
