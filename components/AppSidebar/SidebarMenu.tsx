@@ -9,7 +9,7 @@ import BlockchainIcon from "@/assets/icons/duotone/blockchain.svg";
 import BrowserIcon from "@/assets/icons/duotone/browser.svg";
 import { AnimatePresence } from "moti";
 
-const SidebarMenu = () => {
+const SidebarMenu = ({ isCollapsed }: { isCollapsed?: boolean }) => {
 	const pathname = usePathname();
 
 	const menuSections = [
@@ -84,6 +84,7 @@ const SidebarMenu = () => {
 			<AnimatePresence exitBeforeEnter>
 				{menuSections.map((section) => (
 					<MenuSection
+						isCollapsed={isCollapsed}
 						key={`sidebar-menu-section-${section.id}`}
 						{...(section as MenuSectionProps)}
 					/>

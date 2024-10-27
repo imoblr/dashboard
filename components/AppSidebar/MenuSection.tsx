@@ -1,7 +1,7 @@
 import type { IIconComponentType } from "@gluestack-ui/icon/lib/typescript/createIcon";
 import { Link, type Href } from "expo-router";
 import { Box, Icon, Text } from "../ui";
-import { AnimatePresence, View } from "moti";
+import { AnimatePresence, MotiView, View } from "moti";
 import { Easing } from "react-native-reanimated";
 
 export type SectionItemProps = {
@@ -15,15 +15,25 @@ export type MenuSectionProps = {
 	id: string;
 	title?: string;
 	items: SectionItemProps[];
+	isCollapsed?: boolean;
 };
 
-const MenuSection = ({ title, items }: MenuSectionProps) => {
+const MenuSection = ({ title, items, isCollapsed }: MenuSectionProps) => {
 	return (
 		<Box className="flex flex-col gap-1">
 			{title && (
-				<Text className="text-text-quaternary select-none text-xs font-medium uppercase ml-3 mt-4">
-					{title}
-				</Text>
+				<View
+					className="overflow-hidden"
+					animate={{
+						width: isCollapsed ? 0 : 200,
+						height: isCollapsed ? 0 : 48,
+						display: isCollapsed ? "none" : "flex",
+					}}
+				>
+					<Text className="text-text-quaternary select-none text-xs font-medium uppercase ml-3 mt-4">
+						{title}
+					</Text>
+				</View>
 			)}
 			{items.map((item) => (
 				<Link
@@ -39,13 +49,19 @@ const MenuSection = ({ title, items }: MenuSectionProps) => {
 								size="xl"
 								className={`transition-all ease-in-out duration-300 select-none ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
 							/>
-							<AnimatePresence exitBeforeEnter>
+							<View
+								animate={{
+									width: isCollapsed ? 0 : 180,
+									display: item.isActive ? "flex" : "none",
+								}}
+								className="overflow-hidden"
+							>
 								<Text
-									className={`transition-all ease-in-out duration-300 select-none text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
+									className={`whitespace-nowrap transition-all ease-in-out duration-300 select-none text-sm ${item.isActive ? "text-primary-900" : "text-text-secondary"}`}
 								>
 									{item.title}
 								</Text>
-							</AnimatePresence>
+							</View>
 						</Box>
 						<AnimatePresence exitBeforeEnter>
 							{item.isActive && (

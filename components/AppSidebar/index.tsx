@@ -73,7 +73,7 @@ const AppSidebar = () => {
 				<Box className="pl-2">
 					<ImoblrSidebarLogo width={100} height={28} />
 				</Box>
-				<SidebarMenu />
+				<SidebarMenu isCollapsed={!isPinned && !isHovered} />
 			</View>
 		</View>
 	);
