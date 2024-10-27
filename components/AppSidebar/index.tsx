@@ -49,14 +49,14 @@ const AppSidebar = () => {
 						<Center className="h-[32px] w-[32px] hover:bg-primary-25 bg-background rounded-full border border-border shadow-xs overflow-hidden">
 							<View
 								animate={{ scale: isPinned ? 1 : 0 }}
-								style={{ width: 32, height: 64 }}
+								style={{ width: 32, height: 32 }}
 								transition={{
 									damping: 5,
 									mass: 0.2,
 									stiffness: 60,
 									type: "spring",
 								}}
-								className="absolute h-[32px] w-[64px] justify-center items-center bg-gray-950 rounded-full"
+								className="absolute h-[32px] w-[32px] justify-center items-center bg-gray-950 rounded-full"
 							>
 								<Icon
 									as={UnpinIcon}

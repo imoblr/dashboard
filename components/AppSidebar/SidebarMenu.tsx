@@ -81,15 +81,13 @@ const SidebarMenu = ({ isCollapsed }: { isCollapsed?: boolean }) => {
 
 	return (
 		<Box className="mt-8">
-			<AnimatePresence exitBeforeEnter>
-				{menuSections.map((section) => (
-					<MenuSection
-						isCollapsed={isCollapsed}
-						key={`sidebar-menu-section-${section.id}`}
-						{...(section as MenuSectionProps)}
-					/>
-				))}
-			</AnimatePresence>
+			{menuSections.map((section) => (
+				<MenuSection
+					isCollapsed={isCollapsed}
+					key={`sidebar-menu-section-${section.id}`}
+					{...(section as MenuSectionProps)}
+				/>
+			))}
 		</Box>
 	);
 };
