@@ -9,7 +9,7 @@ import { useState } from "react";
 import { View } from "moti";
 
 const AppSidebar = () => {
-	const [isPinned, setIsPinned] = useState(true);
+	const [isPinned, setIsPinned] = useState(false);
 	const [isHovered, setIsHovered] = useState(false);
 	const toggleIsPinned = () => {
 		setIsPinned(!isPinned);
