@@ -7,7 +7,6 @@ import SidebarMenu from "./SidebarMenu";
 import { Pressable } from "react-native";
 import { useState } from "react";
 import { View } from "moti";
-import { Easing } from "react-native-reanimated";
 
 const AppSidebar = () => {
 	const [isPinned, setIsPinned] = useState(true);
@@ -24,9 +23,13 @@ const AppSidebar = () => {
 		>
 			<View
 				// @ts-ignore
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
-				animate={{ width: isPinned ? 64 : 240 }}
+				onMouseEnter={() => {
+					setIsHovered(true);
+				}}
+				onMouseLeave={() => {
+					setIsHovered(false);
+				}}
+				animate={{ width: isPinned || isHovered ? 240 : 64 }}
 				transition={{ damping: 5, mass: 0.2, stiffness: 60, type: "spring" }}
 				className={
 					"h-full bg-background border-r-[1px] border-border-lighter p-2 pt-4 shadow-xs"
@@ -44,7 +47,6 @@ const AppSidebar = () => {
 					</Center>
 				</Pressable>
 				<Box className="pl-2">
-					{isHovered && <ImoblrSidebarLogo width={100} height={28} />}
 					<ImoblrSidebarLogo width={100} height={28} />
 				</Box>
 				<SidebarMenu />
