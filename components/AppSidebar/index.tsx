@@ -7,6 +7,7 @@ import SidebarMenu from "./SidebarMenu";
 import { Pressable } from "react-native";
 import { useState } from "react";
 import { View } from "moti";
+import { MotiPressable } from "moti/interactions";
 
 const AppSidebar = () => {
 	const [isPinned, setIsPinned] = useState(true);
@@ -35,17 +36,25 @@ const AppSidebar = () => {
 					"h-full bg-background border-r-[1px] border-border-lighter p-2 pt-4 shadow-xs"
 				}
 			>
-				<Pressable
-					className={`transition-all ease-in-out duration-500 absolute top-8 right-[-16px] z-50 ${isPinned ? "rotate-180" : "rotate-0"}`}
-					onPress={toggleIsPinned}
+				<View
+					animate={{
+						opacity: isPinned || isHovered ? 1 : 0,
+						scale: isPinned || isHovered ? 1 : 0.2,
+					}}
+					className="absolute top-8 right-[-16px] z-50"
 				>
-					<Center className="h-[32px] w-[32px] hover:bg-primary-25 bg-background rounded-full border border-border shadow-xs">
-						<Icon
-							as={CollapseLeftIcon}
-							className="text-text-tertiary w-[18px] h-[18px]"
-						/>
-					</Center>
-				</Pressable>
+					<Pressable
+						className={"transition-all ease-in-out duration-500"}
+						onPress={toggleIsPinned}
+					>
+						<Center className="h-[32px] w-[32px] hover:bg-primary-25 bg-background rounded-full border border-border shadow-xs">
+							<Icon
+								as={CollapseLeftIcon}
+								className="text-text-tertiary w-[18px] h-[18px]"
+							/>
+						</Center>
+					</Pressable>
+				</View>
 				<Box className="pl-2">
 					<ImoblrSidebarLogo width={100} height={28} />
 				</Box>
