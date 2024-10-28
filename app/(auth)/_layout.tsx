@@ -96,7 +96,8 @@ export default function AuthLayout() {
 							</Center>
 						)}
 					/>
-					<Box className="absolute bottom-0 left-0 z-10 h-[30%] w-full rounded-t-xxl bg-background-darkest-a3 px-12 py-10 backdrop-blur">
+
+					<Box className="absolute bottom-0 left-0 z-10 h-[30%] w-full rounded-t-xxl bg-[rgba(127,86,217,0.5)] px-12 py-10 backdrop-blur">
 						<Text className="mb-2 font-medium text-2xl text-[#FFF]">
 							{testimonials[slideIndex || 0].text}
 						</Text>
