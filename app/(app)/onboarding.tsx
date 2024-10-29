@@ -6,7 +6,7 @@ import LottieView from "lottie-react-native";
 export default function OnboardingPage() {
 	return (
 		<Center className="flex-1 justify-start overflow-hidden">
-			<Box className="w-full max-w-[1200px] flex-row py-36 gap-36">
+			<Box className="w-full max-w-[1200px] flex-row gap-24">
 				<Box className="max-w-[360px]">
 					<Box className="w-1/2 translate-x-[-32%] translate-y-[25%] z-[-1]">
 						<LottieView
@@ -22,15 +22,18 @@ export default function OnboardingPage() {
 						Seja bem-vindo à Imoblr!
 					</Text>
 					<Text className="text-text-tertiary mb-2">
-						Sua conta foi criada com sucesso e você deu o seu primeiro passo
-						para otimizar o seu negócio imobiliário!
+						Sua conta foi criada com sucesso e você deu o primeiro passo para
+						otimizar o seu negócio!
 					</Text>
 					<Text className="text-text-tertiary">
 						Precisamos apenas de mais algumas informações que são essenciais
-						para que você tenha uma boa experiência usando nossa plataforma.
+						para que você tenha uma boa experiência usando nossa plataforma,
+						<Text className="text-text-tertiary font-bold ml-2">
+							isso vai levar menos de 2 minutos!
+						</Text>
 					</Text>
 				</Box>
-				<Box className="flex-1">
+				<Box className="flex-1 py-24">
 					<Box className="bg-background p-8 rounded-2xl border border-border-lightest shadow-xs">
 						<Text>okdsfoksdfk</Text>
 					</Box>
