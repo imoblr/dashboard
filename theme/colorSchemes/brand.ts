@@ -50,6 +50,7 @@ export const brand = {
     '--button-primary-outer-gradient-2': 'linear-gradient(180deg, var(--color-primary-7) 0%, var(--color-primary-6) 100%)',
     '--color-border': gray['300'],
     '--color-border-lighter': gray['200'],
+    '--color-border-lightest': gray['100'], 
     '--color-secondary': 'green',
     // -----------------------------------------------------------------------------
     // TYPOGRAPHY COLORS

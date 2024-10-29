@@ -51,6 +51,7 @@ module.exports = {
         border: {
           DEFAULT: 'var(--color-border)',
           lighter: 'var(--color-border-lighter)',
+          lightest: 'var(--color-border-lightest)',
         },
         ring: 'hsl(var(--ring))',
 
