@@ -13,4 +13,6 @@ export * from "./select";
 export * from "./switch";
 export * from "./text";
 export * from "./textarea";
+export * from "./toggle";
+export * from "./toggle-group";
 export * from "./tooltip";
