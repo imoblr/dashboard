@@ -4,7 +4,6 @@ import {
 	Center,
 	Form,
 	FormField,
-	RadioGroupItem,
 	Text,
 	ToggleGroup,
 	ToggleGroupItem,
@@ -65,7 +64,6 @@ export default function OnboardingPage() {
 									value="bold"
 									aria-label="Toggle bold"
 								>
-									<RadioGroupItem value="bold" className="font-bold" />
 									<Text className="font-bold">Corretor individual</Text>
 								</ToggleGroupItem>
 								<ToggleGroupItem
