@@ -54,7 +54,7 @@ export default function OnboardingPage() {
 
 	return (
 		<Center className="w-full h-full max-w-[100%]">
-			<Center className="w-full max-w-[1140px] flex-row">
+			<Center className="w-full max-w-[1100px] flex-row">
 				<Box className="max-w-[320px] mr-32 mt-[-20%]">
 					<Box className="w-[160px] h-[100px] translate-x-[-30%] translate-y-[-25%] z-[-1]">
 						<LottieView
