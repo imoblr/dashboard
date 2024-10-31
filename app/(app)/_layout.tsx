@@ -4,9 +4,9 @@ import { Slot, Stack } from "expo-router";
 
 export default function Layout() {
 	return (
-		<Box className="flex-1 flex-row overflow-hidden bg-background-darkest">
+		<Box className="w-full h-full flex-row overflow-auto bg-background-darker">
 			<AppSidebar />
-			<Box className="flex-1">
+			<Box className="flex-1 max-w-[100%]">
 				<Slot />
 			</Box>
 		</Box>

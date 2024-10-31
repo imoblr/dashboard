@@ -5,7 +5,7 @@ import { cn } from "@/utils";
 import { TextClassContext } from "@/components/ui/text";
 
 const toggleVariants = cva(
-	"web:group web:inline-flex items-center justify-center rounded-md web:ring-offset-background web:transition-colors web:hover:bg-muted active:bg-muted web:focus-visible:outline-none web:focus-visible:ring-2 web:focus-visible:ring-ring web:focus-visible:ring-offset-2",
+	"web:group web:inline-flex items-center justify-center rounded-md web:ring-offset-background web:transition-all web:hover:bg-muted active:bg-muted web:focus-visible:outline-none web:focus-visible:ring-2 web:focus-visible:ring-ring web:focus-visible:ring-offset-2",
 	{
 		variants: {
 			variant: {
@@ -26,27 +26,24 @@ const toggleVariants = cva(
 	},
 );
 
-const toggleTextVariants = cva(
-	"text-sm native:text-base text-foreground font-medium",
-	{
-		variants: {
-			variant: {
-				default: "",
-				outline:
-					"web:group-hover:text-accent-foreground web:group-active:text-accent-foreground",
-			},
-			size: {
-				default: "",
-				sm: "",
-				lg: "",
-			},
+const toggleTextVariants = cva("text-sm native:text-base text-foreground", {
+	variants: {
+		variant: {
+			default: "",
+			outline:
+				"web:group-hover:text-accent-foreground web:group-active:text-accent-foreground",
 		},
-		defaultVariants: {
-			variant: "default",
-			size: "default",
+		size: {
+			default: "",
+			sm: "",
+			lg: "",
 		},
 	},
-);
+	defaultVariants: {
+		variant: "default",
+		size: "default",
+	},
+});
 
 const Toggle = React.forwardRef<
 	TogglePrimitive.RootRef,
