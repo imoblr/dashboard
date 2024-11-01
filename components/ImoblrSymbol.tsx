@@ -11,7 +11,7 @@ const imoblrSymbolVariants = cva("flex", {
 	variants: {
 		size: {
 			default: "w-[80px] h-[80px]",
-			xs: "w-[40px] h-40px]",
+			xs: "w-[30px] h-30px]",
 			sm: "w-[60px] h-[60px]",
 			md: "w-[80px] h-[80px]",
 			lg: "w-[100px] h-[100px]",

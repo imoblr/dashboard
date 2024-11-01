@@ -1,5 +1,5 @@
 import { Stack, Link } from "expo-router";
-import { Box, Text } from "@/components/ui";
+import { Box, Button, Text } from "@/components/ui";
 
 export default function Home() {
 	return (
@@ -8,6 +8,11 @@ export default function Home() {
 				opkfsdfko sdogsdogdfskogsd asgoadsfgokasdfgk
 				asgoadsfgokasdfgkgadsfogdfsakogs
 			</Text>
+			<Link href="/cadastro" asChild>
+				<Button>
+					<Text>Continuar como cliente</Text>
+				</Button>
+			</Link>
 		</Box>
 	);
 }

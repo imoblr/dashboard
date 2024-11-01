@@ -11,6 +11,7 @@ import SidebarMenu from "./SidebarMenu";
 import { Easing, Pressable } from "react-native";
 import { useState } from "react";
 import { AnimatePresence, View } from "moti";
+import { ImoblrSymbol } from "../ImoblrSymbol";
 
 export const CollapsedSidebarWidth = 64;
 export const ExpandedSidebarWidth = 240;
@@ -76,12 +77,11 @@ const AppSidebar = () => {
 						</Center>
 					</Pressable>
 				</View>
-				<Box className="flex flex-row items-center gap-3 px-3 py-2 text-text-secondary">
-					<Center className="w-[24px] h-[24px]">
+				<Center className="flex flex-row items-center gap-3 px-3 py-2 text-text-secondary">
+					<Center className="w-[30px] h-[30px]">
 						<Icon
 							as={ImoblrSymbolLightBackground}
-							size="xl"
-							className="transition-all ease-in-out duration-300 select-none"
+							className="transition-all ease-in-out duration-300 select-none w-[100%] h-[100%]"
 						/>
 					</Center>
 					<AnimatePresence exitBeforeEnter>
@@ -115,7 +115,7 @@ const AppSidebar = () => {
 							</View>
 						)}
 					</AnimatePresence>
-				</Box>
+				</Center>
 				<SidebarMenu isCollapsed={!isPinned && !isHovered} />
 			</View>
 		</View>

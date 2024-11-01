@@ -56,7 +56,6 @@ const MenuSection = ({ title, items, isCollapsed }: MenuSectionProps) => {
 			</AnimatePresence>
 			{items.map((item) => (
 				<Link
-					asChild
 					href={item.href}
 					key={`menu-${title}-${item.title}`}
 					className={item.isActive ? "pointer-events-none" : ""}
