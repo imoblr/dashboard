@@ -182,7 +182,7 @@ export default function Screen() {
 						</Form>
 					</View>
 				)}
-				{/* {signUpStep === 2 && (
+				{signUpStep === 2 && (
 					<View
 						from={{
 							opacity: 0,
@@ -261,8 +261,8 @@ export default function Screen() {
 							</View>
 						</Form>
 					</View>
-				)} */}
-				{/* {signUpStep === 3 && (
+				)}
+				{signUpStep === 3 && (
 					<View
 						from={{
 							opacity: 0,
@@ -312,7 +312,7 @@ export default function Screen() {
 							</Link>
 						</Center>
 					</View>
-				)} */}
+				)}
 			</AnimatePresence>
 		</Center>
 	);
