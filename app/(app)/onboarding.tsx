@@ -6,6 +6,7 @@ import {
 	Form,
 	FormField,
 	Icon,
+	SimpleRadio,
 	Text,
 	ToggleGroup,
 	ToggleGroupItem,
@@ -99,9 +100,9 @@ export default function OnboardingPage() {
 						{businessTypes.map((type) => (
 							<ToggleGroupItem
 								className={cn(
-									"transition-all duration-300 ease-in-out bg-background border-[1px] border-border w-full shadow-xs py-4 px-6 h-[auto] rounded-2xl",
+									"transition duration-300 ease-in-out bg-background border-[1px] border-border w-full shadow-xs py-4 px-6 h-[auto] rounded-2xl",
 									{
-										"border-primary-700 ring-1 ring-primary-700 pointer-events-none":
+										"ring-2 ring-offset-4 ring-primary-500 pointer-events-none":
 											type.value === value,
 										"hover:scale-[102%]": type.value !== value,
 									},
@@ -111,10 +112,7 @@ export default function OnboardingPage() {
 								key={type.value}
 							>
 								<Box className="flex flex-row items-center gap-2 w-full">
-									<Icon
-										as={type.value === "bold" ? RadioButton : Circle}
-										className={`text-${type.value === value ? "primary-800" : "text-tertiary"}`}
-									/>
+									<SimpleRadio checked={type.value === value} />
 									<Center className="flex-1 ml-4 flex-row">
 										<Center
 											className={cn(

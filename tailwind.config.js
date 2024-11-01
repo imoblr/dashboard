@@ -49,6 +49,8 @@ module.exports = {
           light: 'var(--color-shadow-light)',
         },
         border: {
+          darkest: 'var(--color-border-darkest)',
+          darker: 'var(--color-border-darker)',
           DEFAULT: 'var(--color-border)',
           lighter: 'var(--color-border-lighter)',
           lightest: 'var(--color-border-lightest)',

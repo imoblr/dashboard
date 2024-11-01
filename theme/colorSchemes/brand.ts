@@ -48,9 +48,12 @@ export const brand = {
     '--color-background-darkest-a3': Color(gray['100']).alpha(0.6),
     '--button-primary-outer-gradient-1': 'linear-gradient(180deg, #000 0%, #FFF 100%)',
     '--button-primary-outer-gradient-2': 'linear-gradient(180deg, var(--color-primary-7) 0%, var(--color-primary-6) 100%)',
-    '--color-border': gray['200'],
-    '--color-border-lighter': gray['100'],
-    '--color-border-lightest': gray['50'], 
+    // - start - Border colors
+    '--color-border-darkest': gray['500'],
+    '--color-border-darker': gray['400'],
+    '--color-border': gray['300'],
+    '--color-border-lighter': gray['200'],
+    '--color-border-lightest': gray['100'], 
     '--color-secondary': 'green',
     // -----------------------------------------------------------------------------
     // TYPOGRAPHY COLORS
