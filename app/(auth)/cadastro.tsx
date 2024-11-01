@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
-import type LottieView from "lottie-react-native";
+import LottieView from "lottie-react-native";
 import {
 	Box,
 	Center,
