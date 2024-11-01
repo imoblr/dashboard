@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
-import LottieView from "lottie-react-native";
+import type LottieView from "lottie-react-native";
 import {
 	Box,
 	Center,
@@ -19,11 +19,10 @@ import { Link } from "expo-router";
 import { Image, Platform } from "react-native";
 import { useColorScheme } from "nativewind";
 import { AnimatePresence, View } from "moti";
-import { ImoblrSymbol } from "@/components";
+import ImoblrSymbol from "@/assets/logos/imoblr-symbol-light-background.svg";
 import GoogleLogo from "@/assets/logos/google-logo.svg";
 import AppleLogo from "@/assets/logos/apple-logo.svg";
 import DashboardSettingIcon from "@/assets/icons/dashboard-setting.svg";
-import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
 import CheckmarkSquare from "@/assets/icons/checkmark-square.svg";
 
 const formSchema = z.object({
@@ -110,7 +109,9 @@ export default function Screen() {
 						key="sign-up-step-1"
 					>
 						<Center className="mb-8">
-							<ImoblrSymbol className="mb-4" size="sm" />
+							<Box className="w-[20%] mb-4">
+								<ImoblrSymbol width="100%" height="auto" />
+							</Box>
 							<Text className="text-3xl text-gray-900 font-medium mb-2">
 								Crie sua conta
 							</Text>
@@ -181,7 +182,7 @@ export default function Screen() {
 						</Form>
 					</View>
 				)}
-				{signUpStep === 2 && (
+				{/* {signUpStep === 2 && (
 					<View
 						from={{
 							opacity: 0,
@@ -260,8 +261,8 @@ export default function Screen() {
 							</View>
 						</Form>
 					</View>
-				)}
-				{signUpStep === 3 && (
+				)} */}
+				{/* {signUpStep === 3 && (
 					<View
 						from={{
 							opacity: 0,
@@ -311,7 +312,7 @@ export default function Screen() {
 							</Link>
 						</Center>
 					</View>
-				)}
+				)} */}
 			</AnimatePresence>
 		</Center>
 	);
