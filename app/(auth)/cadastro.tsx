@@ -17,7 +17,6 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Link } from "expo-router";
 import { Image, Platform } from "react-native";
-import { useColorScheme } from "nativewind";
 import { AnimatePresence, View } from "moti";
 import ImoblrSymbol from "@/assets/logos/imoblr-symbol-light-background.svg";
 import GoogleLogo from "@/assets/logos/google-logo.svg";
