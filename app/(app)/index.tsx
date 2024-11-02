@@ -8,9 +8,9 @@ export default function Home() {
 				opkfsdfko sdogsdogdfskogsd asgoadsfgokasdfgk
 				asgoadsfgokasdfgkgadsfogdfsakogs
 			</Text>
-			<Link href="/cadastro" asChild>
+			<Link href="/onboarding" asChild>
 				<Button>
-					<Text>Continuar como cliente</Text>
+					<Text>Ir para onboarding</Text>
 				</Button>
 			</Link>
 		</Box>

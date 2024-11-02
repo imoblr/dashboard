@@ -28,7 +28,7 @@ const AppSidebar = () => {
 		<View
 			animate={{ width: isPinned ? 240 : 64 }}
 			transition={{ damping: 5, mass: 0.2, stiffness: 60, type: "spring" }}
-			className={"h-full overflow-visible z-50"}
+			className={"h-full overflow-visible z-50 native:hidden"}
 		>
 			<View
 				// @ts-ignore

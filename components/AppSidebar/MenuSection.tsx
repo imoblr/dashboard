@@ -67,6 +67,7 @@ const MenuSection = ({ title, items, isCollapsed }: MenuSectionProps) => {
 									as={item.icon}
 									size="xl"
 									className={`transition-all ease-in-out duration-300 select-none ${item.isActive ? "text-primary-900" : "text-text-tertiary"}`}
+									color="blue"
 								/>
 							</Center>
 							<AnimatePresence exitBeforeEnter>

@@ -45,27 +45,34 @@ const businessTypes = [
 	},
 ];
 
-const getBusinessTypeByValue = (value: string) => {
-	return businessTypes.find((type) => type.value === value);
+const getBusinessTypeByValue = (value?: string) => {
+	return value ? businessTypes.find((type) => type.value === value) : undefined;
 };
 
 export default function OnboardingPage() {
 	const [value, setValue] = useState<string | undefined>(undefined);
 	const businessTypeObject = getBusinessTypeByValue(value);
 
+	const updateBusinessType = (value: string) => {
+		console.log("updateBusinessType", value);
+		// setValue(value);
+	};
+
 	return (
-		<Center className="w-full h-full max-w-[100%]">
+		<Center className="w-full h-full max-w-[100%] native:p-6">
 			<Center className="w-full max-w-[1100px] flex-row">
-				<Box className="max-w-[320px] mr-32 mt-[-20%]">
-					<Box className="w-[160px] h-[100px] translate-x-[-30%] translate-y-[-25%] z-[-1]">
-						<LottieView
-							source={require("@/assets/animations/fireworks.json")}
-							style={{ width: "100%", height: "100%" }}
-							autoPlay
-							loop={true}
-						/>
-					</Box>
-					<ImoblrSymbolLightBackground width={60} height={60} />
+				<Box className="max-w-[320px] mr-32 mt-[-20%] hidden md:flex">
+					<Center className="w-[60px] h-[60px]">
+						<Box className="w-[160px] h-[100px] absolute top-[-80px] z-[-1]">
+							<LottieView
+								source={require("@/assets/animations/fireworks.json")}
+								style={{ width: "100%", height: "100%" }}
+								autoPlay
+								loop={true}
+							/>
+						</Box>
+						<ImoblrSymbolLightBackground />
+					</Center>
 
 					<Text className="mt-8 text-primary mr-1 text-4xl font-bold">
 						Olá!
@@ -93,20 +100,21 @@ export default function OnboardingPage() {
 
 					<ToggleGroup
 						value={value}
-						onValueChange={setValue}
+						onValueChange={updateBusinessType}
 						type="single"
 						className="w-full gap-4 flex-column"
 					>
 						{businessTypes.map((type) => (
 							<ToggleGroupItem
 								className={cn(
-									"transition duration-300 ease-in-out bg-background border-[1px] border-border w-full shadow-xs py-4 px-6 h-[auto] rounded-2xl",
+									"transition duration-300 ease-in-out bg-background border-[1px] border-border w-full shadow-xs rounded-2xl py-4 px-6",
 									{
 										"ring-2 ring-offset-4 ring-primary-500 pointer-events-none":
 											type.value === value,
-										"hover:scale-[102%]": type.value !== value,
+										"web:hover:scale-[102%]": type.value !== value,
 									},
 								)}
+								size="custom"
 								value={type.value}
 								aria-label="Toggle bold"
 								key={type.value}
